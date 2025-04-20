@@ -13,6 +13,9 @@ def create_db_and_tables():
 
 
 def get_session():
+    """
+    Dependency to get the database session
+    """
     with Session(engine) as session:
         yield session
 
