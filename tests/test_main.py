@@ -1,8 +1,4 @@
-from fastapi.testclient import TestClient
-from src.main import app
-
-client = TestClient(app)
-
-def test_health_check():
+def test_health_check(client):
+    """Test the health check endpoint is working"""
     response = client.get("/")
     assert response.status_code == 200
